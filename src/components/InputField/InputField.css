@@ -1,0 +1,21 @@
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.input__text-field {
+    border-radius: 15px;
+    border-width: 1px;
+    padding-left: 10px;
+}
+
+.text-field__error {
+    font-size: 8px;
+}
+
+.necessarily {
+    color: red;
+}
