@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeValue } from '../../redux/Fields/slices';
 import './SelectField.css';
+import '../Field.css';
+import { changeValue } from '../../../redux/Fields/slices';
 
 const SelectField = (props) => {
     const dispatch = useDispatch();
@@ -20,9 +21,9 @@ const SelectField = (props) => {
     return (
         <div className="select">
             <label>{props.placeholder}</label>
-            <select className="select-field" value={selected} onChange={(e) => handleChange(e.target.value)}>
-                <option value="">-</option>
-                {props.options.map(option => <option key={option} value={option}>{option}</option>)}
+            <select className="field select-field" value={selected} onChange={(e) => handleChange(e.target.value)}>
+                <option value="" className="select__option">-</option>
+                {props.options.map(option => <option className="select__option" key={option} value={option}>{option}</option>)}
             </select>
         </div>
     )

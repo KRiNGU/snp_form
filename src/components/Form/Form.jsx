@@ -1,10 +1,11 @@
 import { memo } from 'react';
-import InputField from '../InputField/InputField';
-import SelectField from '../SelectField/SelectField';
+import InputField from '../Field/InputField/InputField.jsx';
+import SelectField from '../Field/SelectField/SelectField.jsx';
+import './Form.css';
 
 const Form = (props) => {
     return (
-    <>
+    <div>
         <p>Форма ввода данных о пользователе:</p>
         <form className="form">
             <InputField
@@ -15,6 +16,8 @@ const Form = (props) => {
                         return 'Введите имя';
                     } else if (!/^[a-zA-Zа-яА-Я\-'/]+$/.test(value)) {
                         return "Имя должно содержать только буквы, символ - или символ '";
+                    } else if (!/^[A-ZА-Я]/.test(value)) {
+                        return 'Первая буква имени должна быть заглавной';
                     } else return '';
                 }}
                 necessarily={true}
@@ -27,6 +30,8 @@ const Form = (props) => {
                         return 'Введите фамилию';
                     } else if (!/^[a-zA-Zа-яА-Я\-'/]+$/.test(value)) {
                         return "Фамилия должно содержать только буквы, символ - или символ '";
+                    } else if (!/^[A-ZА-Я]/.test(value)) {
+                        return 'Первая буква фамилии должна быть заглавной';
                     } else return '';
                 }}
                 necessarily={true}
@@ -37,6 +42,8 @@ const Form = (props) => {
                 validityFunction={(value) => { 
                     if (!/^[a-zA-Zа-яА-Я\-'/]+$/.test(value)) {
                         return "Отчество должно содержать только буквы, символ - или символ '";
+                    } else if (!/^[A-ZА-Я]/.test(value)) {
+                        return 'Первая буква отчества должна быть заглавной';
                     } else return '';
                 }}
             />
@@ -50,8 +57,11 @@ const Form = (props) => {
                 id='dateOfBirth'
                 placeholder="Дата рождения"
                 validityFunction={(value) => {
+                    if (!/^[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9][0-9]$/.test(value)) {
+                        return 'Введите дату рождения в формате ДД.ММ.ГГГГ'
+                    }
                     if (!/^(0[1-9]|[12][0-9]|3[01])\.[0-1][0-9]\.(2[09]|19)[0-9][0-9]$/.test(value)) {
-                        return 'Введите дату рождения в формате ДД.ММ.ГГГГ';
+                        return 'Такая дата невозможна';
                     } else return '';
                 }}
             />
@@ -65,7 +75,7 @@ const Form = (props) => {
                 }}
             />
     </form>
-  </>)
+  </div>)
 }
 
 export default memo(Form);

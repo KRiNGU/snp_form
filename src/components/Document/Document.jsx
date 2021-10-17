@@ -10,15 +10,16 @@ const Document = (props) => {
     const email = useSelector((state) => state.email);
     const sex = useSelector((state) => state.sex);
 
-    return (<div>
+    return (
+    <div className="document">
         Данные, которые будут известны о вас:
         <ul className="data__list">
             <li>Имя : {name}</li>
             <li>Фамилия : {secondName}</li>
             <li>Отчество : {patronymic}</li>
+            <li>Пол : {sex}</li>
             <li>Дата рождения : {dateOfBirth}</li>
             <li>Email : {email}</li>
-            <li>Пол : {sex}</li>
         </ul>
     </div>)
 }

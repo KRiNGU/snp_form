@@ -1,7 +1,8 @@
 import { memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeValue } from '../../redux/Fields/slices';
-import './InputField.css'
+import { changeValue } from '../../../redux/Fields/slices';
+import './InputField.css';
+import '../Field.css';
 
 const InputField = (props) => {
     const [value, setValue] = useState(localStorage.getItem(props.id) ?? '');
@@ -27,10 +28,10 @@ const InputField = (props) => {
     }, [props.id, value]);
 
     return(
-        <div className="input-field">
+        <div className="input">
             <label >{props.placeholder}{props.necessarily &&  <span className="necessarily">*</span> }</label>
-            <input onBlur={(e) => handleBlur(e.target.value)} className="input__text-field" type="text" onChange={(e) => handleChange(e.target.value)} value={value}/> 
-            <label className="text-field__error">{error}</label>
+            <input onBlur={(e) => handleBlur(e.target.value)} className="field input__field" type="text" onChange={(e) => handleChange(e.target.value)} value={value}/> 
+            <label className="input__error">{error}</label>
         </div>
     )
 }

@@ -6,10 +6,10 @@ import Form from './components/Form/Form';
 const App = () => {
 
   return (
-    <>
+    <div className="main">
      <Form></Form>
      <Document></Document>
-    </>
+    </div>
   );
 }
 
