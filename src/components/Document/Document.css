@@ -2,7 +2,12 @@
     list-style-type: none;
 }
 
-
 .document {
     margin-left: 50px;
+}
+
+.data-list__field {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin-top: 10px;
 }

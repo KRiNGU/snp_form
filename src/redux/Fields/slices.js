@@ -8,6 +8,7 @@ const initialState = {
     sex: localStorage.getItem("sex") ?? '',
     dateOfBirth: localStorage.getItem("dateOfBirth") ?? '',
     email: localStorage.getItem("email") ?? '',
+    advertising: JSON.parse(localStorage.getItem("advertising") ?? false),
 }
 
 export const fieldsSlice = createSlice({

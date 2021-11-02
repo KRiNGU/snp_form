@@ -1,10 +1,18 @@
 .field {
-  height: 32px;
-  border: 0px solid grey;
+  border: 1px solid grey;
+  height: 36px;
   outline: none;
-  border-bottom-width: 1px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 16px;
 }
 
 .field:focus {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(98, 108, 253, 1);
+}
+
+.header-label {
+  font-weight: bold;
+  margin-left: 5px;
 }

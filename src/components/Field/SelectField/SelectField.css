@@ -1,6 +1,16 @@
 .select {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 300px;
     margin-top: 20px;
+}
+
+.select-field {
+    height: 38px;
+    padding-left: 6px;
+}
+
+.select__option {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 16px;
 }
