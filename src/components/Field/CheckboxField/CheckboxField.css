@@ -1,11 +1,14 @@
 .checkbox {
-    display: flex;
-    align-items: center;
     margin-top: 20px;
-    justify-content: space-between;
     margin: 0 5px;
 }
 
 .checkbox__field:focus {
   box-shadow: none;
+}
+
+.checkbox-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
